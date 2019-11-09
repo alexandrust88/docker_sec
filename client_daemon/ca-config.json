@@ -19,7 +19,17 @@
                     "key encipherment",
                     "client auth"
                 ]
+            },
+            "client-server": {
+                "expiry": "1440h",
+                "usages": [
+                    "signing",
+                    "key encipherment",
+                    "client auth",
+                    "server auth"
+                ]
             }
+
+}
         }
     }
-}
