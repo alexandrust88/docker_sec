@@ -1,0 +1,13 @@
+
+DD_API_KEY=your_api key 
+
+ DD_SITE="datadoghq.eu" bash -c "$(curl -L https://raw.githubusercontent.com/DataDog/datadog-agent/master/cmd/agent/install_script.sh)"
+
+DOCKER_CONTENT_TRUST=1 
+docker run -d --name dd-agent -v /var/run/docker.sock:/var/run/docker.sock:ro -v /proc/:/host/proc/:ro -v /sys/fs/cgroup/:/host/sys/fs/cgroup:ro -e DD_API_KEY=76aa075754c3fc5bb723b6d61a8e6ec1 -e DD_SITE="datadoghq.eu" datadog/agent:latest
+
+
+usermod -a -G docker dd-agent
+sudo usermod -a -G docker dd-agent
+docker ps
+#### logs from host and node up to cloud ssas datadog
